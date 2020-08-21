@@ -271,7 +271,7 @@ open class Session {
                                              encoding: encoding,
                                              headers: headers,
                                              requestModifier: requestModifier)
-
+        print("Session: \(convertible)")
         return request(convertible, interceptor: interceptor)
     }
 

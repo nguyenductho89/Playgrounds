@@ -7,6 +7,7 @@ target 'TestingPlayground' do
 pod 'Alamofire'
 pod 'RxSwift', '~> 5'
 pod 'RxCocoa', '~> 5'
+pod 'Swinject'
 
   # Pods for TestingPlayground
 

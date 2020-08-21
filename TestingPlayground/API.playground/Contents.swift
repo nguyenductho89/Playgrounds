@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import RxSwift
+import PlaygroundSupport
 
 class API<T> {
     
@@ -19,7 +20,10 @@ class API<T> {
     }
     
     private func requestSend(observer: AnyObserver<T>) {
-        _ = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding())
+        _ = AF.request(self.requestUrl(),
+                       method: self.method(),
+                       //parameters: self.params(),
+                       encoding: self.encoding())
             //.authenticate(usingCredential: credential())
             .responseJSON { response in
                 
@@ -47,6 +51,7 @@ class API<T> {
     }
     
     func request() -> Observable<T> {
+        print("request")
         return Observable<T>.create { observer in
             self.request(observer: observer)
             return Disposables.create {
@@ -55,10 +60,15 @@ class API<T> {
     }
     
     private func request(observer: AnyObserver<T>) {
+        print("af request")
         _ = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding(), headers: self.headers())
             //.authenticate(usingCredential: credential())
+            .responseData(completionHandler: { (data) in
+                print("request:\(data.request)")
+                print("af request responseData: \(data) ")
+            })
             .responseJSON { response in
-                
+                print("af request response: \(response.result) ")
                 switch response.result {
                     case .success(let val):
                         if(response.response!.statusCode < 400) {
@@ -82,7 +92,6 @@ class API<T> {
                     }
                 }
         }
-        
     }
     
     func convertJson(_ val: Any) throws -> T {
@@ -108,7 +117,7 @@ class API<T> {
     }
     
     func baseUrl() -> String {
-        return ""
+        return "https://develop-mobile.famishare.jp/api/"
     }
     
     func path() -> String {
@@ -129,7 +138,7 @@ class API<T> {
     
     func headers() -> Alamofire.HTTPHeaders {
         return [
-            "Authorization": "Bearer " + ""
+            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiRFJKT1kiLCJvZmZpY2VfdHlwZSI6Ik1FRElDQUwiLCJwZXJzb25hbEZsYWciOmZhbHNlLCJyb2xlcyI6W10sIm9mZmljZV91c2VyX2lkIjoiNWMzYmU3M2I5ZjkxYjIwMDI5OTBlY2U2IiwiZW5hYmxlZCI6dHJ1ZSwiYXV0aG9yaXRpZXMiOnsicm9sZSI6Ik1QXzEiLCJmdW5jIjp7IkZQU18wIjpbMSwyLDMsNSw2LDcsOCw5LDEwLDEyLDE1LDE2XX19LCJjbGllbnRfaWQiOiJkcmpveSIsIm9mZmljZV9pZCI6IjVjM2JlNzNiZjA4Yzc2MDAyODgyMzU4NSIsImF1ZCI6WyJkZW1vIl0sInVzZXJfaWQiOiI1YzNiZTczYjlmOTFiMjAwMjk5MGVjZTIiLCJleHBpcmUiOjAsInNjb3BlIjpbIm9wZW5pZCIsImVsZWFybmluZyJdLCJub25sb2NrZWQiOnRydWUsImp0aSI6IjhmYmMyMDIwLTY5NjEtNGM1MS1iMDgyLWNlOGRkODA1YWUzYiJ9.NgyRWRZp4RNb_c95JY8qQ3Iu7c0yDvX6zZ5Pm0gl3Nw3ZyHzR2uvBEuYujIj371rxwu1scNAVOm4jlfuJ0u16lEe22QHJxxs7gjj4IXUr7LkJ2muH-n_or2zwR6-_-s3gX29q9bE0dDf-LMeRtzu9UUGIgsBY8xUjOEVOjxWNYivHe9rT8gAMUAGtKsCugPz01NFwmFkPWmcmz1ZaZqW8D3QbSZZ5C0NJVTZ1dGE2OwGj1BV1nGDo6_hofrb4_oh-47XjMjeGN8aIEZtA7hu8-B9ntT6RvsjgVXSqu_leQnCo6NO2MGp5r6mhH56NpXB4rN2NAvopdvY6gi-q9SnKA"
         ]
     }
     
@@ -142,6 +151,109 @@ class API<T> {
     }
 }
 
+protocol DrEncodable {
+    init(_ val: NSDictionary)
+}
 
+protocol DrDecodable {
+    
+}
 
+class ApiResult: DrEncodable, DrDecodable {
+    required init(_ val: NSDictionary) {
+        
+    }
+}
 
+class TotalMrApi: API<TotalMrEntity> {
+    
+    private enum Keys: String, CodingKey {
+        case topMrInfoList
+    }
+    
+    override init() {}
+    
+    override func convertJson(_ val: Any) throws -> TotalMrEntity {
+        guard let dict = val as? Dictionary<String, Any>,
+            let list = dict[TotalMrApi.Keys.topMrInfoList.stringValue]
+                as? Array<Dictionary<String, AnyObject>> else {
+                    return TotalMrEntity([:])
+        }
+        return list.map {TotalMrEntity($0 as NSDictionary)}
+            .compactMap {$0}
+            .first ?? TotalMrEntity([:])
+    }
+    
+    override func path() -> String {
+        return "ba/shared_values/get_top_mr"
+    }
+    
+    override func method() -> Alamofire.HTTPMethod {
+        return .get
+    }
+}
+
+protocol EntityConvertible {
+    associatedtype Entity
+    init(_ entity: Entity)
+}
+
+class TotalMr: EntityConvertible {
+    
+    typealias Entity = TotalMrEntity
+    var totalMr: Int = 0
+    
+    required init(_ entity: TotalMrEntity) {
+        self.totalMr = entity.totalMr
+    }
+}
+
+class TotalMrEntity: ApiResult {
+    enum Keys: String, CodingKey {
+        case totalMr
+    }
+    var totalMr: Int = 0
+    required init(_ val: NSDictionary) {
+        super.init(val)
+        self.totalMr = val[TotalMrEntity.Keys.totalMr.stringValue] as? Int ?? 0
+    }
+}
+
+protocol TotalMrRepos {
+    func getTotalMr() -> Observable<TotalMrEntity>
+}
+
+class TotalMrReposImpl: TotalMrRepos {
+    
+    func getTotalMr() -> Observable<TotalMrEntity> {
+        print("impl")
+        return TotalMrApi().request()
+    }
+}
+
+class TotalMrUC {
+    
+    private var repos: TotalMrRepos
+    private let disposeBag = DisposeBag()
+    private var totalMr: TotalMr?
+    
+    init(_ repos: TotalMrRepos) {
+        self.repos = repos
+    }
+    
+    func exe() -> Observable<TotalMr> {
+        print("exe")
+        return repos.getTotalMr()
+            .map { return TotalMr($0)}
+    }
+}
+
+let repos = TotalMrReposImpl()
+let uc = TotalMrUC(repos)
+uc.exe().subscribe(onNext: { totalMr in
+    print(totalMr)
+    }, onError: { error in
+
+}).disposed(by: DisposeBag())
+
+PlaygroundPage.current.needsIndefiniteExecution = true
