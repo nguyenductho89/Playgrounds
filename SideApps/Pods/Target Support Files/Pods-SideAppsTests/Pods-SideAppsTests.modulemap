@@ -1,0 +1,6 @@
+framework module Pods_SideAppsTests {
+  umbrella header "Pods-SideAppsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
