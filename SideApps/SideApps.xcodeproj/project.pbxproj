@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B69BCBEE09632C67E7E53023 /* Pods_SideAppsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39643B62232A831A283C97B /* Pods_SideAppsTests.framework */; };
+		D06AE3C724F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
+		D06AE3C824F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
+		D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C924F9ED7D0023215C /* ApiResult.swift */; };
+		D06AE3CB24F9ED7D0023215C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C924F9ED7D0023215C /* ApiResult.swift */; };
+		D06AE3CD24F9EDC90023215C /* TotalMrUc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3CC24F9EDC90023215C /* TotalMrUc.swift */; };
+		D06AE3CE24F9EDC90023215C /* TotalMrUc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3CC24F9EDC90023215C /* TotalMrUc.swift */; };
+		D06AE3D024F9EE050023215C /* EntityConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3CF24F9EE050023215C /* EntityConvertible.swift */; };
+		D06AE3D124F9EE050023215C /* EntityConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3CF24F9EE050023215C /* EntityConvertible.swift */; };
 		D09D951124F92A190057A504 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D951024F92A190057A504 /* AppDelegate.swift */; };
 		D09D951324F92A190057A504 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D951224F92A190057A504 /* SceneDelegate.swift */; };
 		D09D951524F92A190057A504 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D951424F92A190057A504 /* ViewController.swift */; };
@@ -34,6 +42,10 @@
 		38CD5A41C28509E9749E859B /* Pods-SideAppsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideAppsTests.release.xcconfig"; path = "Target Support Files/Pods-SideAppsTests/Pods-SideAppsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DFA6AA24CBDEBE9A00CFE67 /* Pods-SideAppsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideAppsTests.debug.xcconfig"; path = "Target Support Files/Pods-SideAppsTests/Pods-SideAppsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A39643B62232A831A283C97B /* Pods_SideAppsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideAppsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D06AE3C624F9ED030023215C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D06AE3C924F9ED7D0023215C /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		D06AE3CC24F9EDC90023215C /* TotalMrUc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMrUc.swift; sourceTree = "<group>"; };
+		D06AE3CF24F9EE050023215C /* EntityConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityConvertible.swift; sourceTree = "<group>"; };
 		D08AC4FDD59BD16D5FB59D65 /* Pods-SideApps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SideApps.release.xcconfig"; path = "Target Support Files/Pods-SideApps/Pods-SideApps.release.xcconfig"; sourceTree = "<group>"; };
 		D09D950D24F92A190057A504 /* SideApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09D951024F92A190057A504 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D06AE3C524F9ECEC0023215C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D06AE3C624F9ED030023215C /* API.swift */,
+				D06AE3C924F9ED7D0023215C /* ApiResult.swift */,
+				D06AE3CC24F9EDC90023215C /* TotalMrUc.swift */,
+				D06AE3CF24F9EE050023215C /* EntityConvertible.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D09D950424F92A190057A504 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +116,7 @@
 		D09D950F24F92A190057A504 /* SideApps */ = {
 			isa = PBXGroup;
 			children = (
+				D06AE3C524F9ECEC0023215C /* Networking */,
 				D09D951024F92A190057A504 /* AppDelegate.swift */,
 				D09D951224F92A190057A504 /* SceneDelegate.swift */,
 				D09D951424F92A190057A504 /* ViewController.swift */,
@@ -122,7 +146,6 @@
 				8DFA6AA24CBDEBE9A00CFE67 /* Pods-SideAppsTests.debug.xcconfig */,
 				38CD5A41C28509E9749E859B /* Pods-SideAppsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -304,9 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09D951524F92A190057A504 /* ViewController.swift in Sources */,
+				D06AE3CD24F9EDC90023215C /* TotalMrUc.swift in Sources */,
 				D09D951124F92A190057A504 /* AppDelegate.swift in Sources */,
 				D09D951B24F92A190057A504 /* SideApps.xcdatamodeld in Sources */,
+				D06AE3D024F9EE050023215C /* EntityConvertible.swift in Sources */,
+				D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */,
 				D09D951324F92A190057A504 /* SceneDelegate.swift in Sources */,
+				D06AE3C724F9ED030023215C /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06AE3D124F9EE050023215C /* EntityConvertible.swift in Sources */,
+				D06AE3CB24F9ED7D0023215C /* ApiResult.swift in Sources */,
+				D06AE3CE24F9EDC90023215C /* TotalMrUc.swift in Sources */,
+				D06AE3C824F9ED030023215C /* API.swift in Sources */,
 				D09D952B24F92A1A0057A504 /* SideAppsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
