@@ -9,19 +9,15 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
-read -p "Enter number one : " apiName
-read -p "Enter number two : " entityName
-read -p "Enter number three : " reposName
-
-#while getopts "a:e:r:" opt
-#do
-#   case "$opt" in
-#      a ) apiName="$OPTARG" ;;
-#      e ) entityName="$OPTARG" ;;
-#      r ) reposName="$OPTARG" ;;
-#      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
-#   esac
-#done
+while getopts "a:e:r:" opt
+do
+   case "$opt" in
+      a ) apiName="$OPTARG" ;;
+      e ) entityName="$OPTARG" ;;
+      r ) reposName="$OPTARG" ;;
+      ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
+   esac
+done
 
 # Print helpFunction in case parameters are empty
 if [ -z "$apiName" ] || [ -z "$entityName" ] || [ -z "$reposName" ]
