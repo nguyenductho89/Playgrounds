@@ -38,7 +38,6 @@ protocol TotalMrRepos {
 class TotalMrReposImpl: TotalMrRepos {
     
     func getTotalMr() -> Observable<TotalMrEntity> {
-        print("impl")
         return TotalMrApi().request()
     }
 }
@@ -75,14 +74,12 @@ class TotalMrUC {
     
     private var repos: TotalMrRepos
     private let disposeBag = DisposeBag()
-    private var totalMr: TotalMr?
     
     init(_ repos: TotalMrRepos) {
         self.repos = repos
     }
     
     func exe() -> Observable<TotalMr> {
-        print("exe")
         return repos.getTotalMr()
             .map { return TotalMr($0)}
     }
