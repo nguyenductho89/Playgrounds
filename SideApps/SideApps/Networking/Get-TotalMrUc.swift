@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import Alamofire
 
+//MARK: - Model
 class TotalMr: EntityConvertible {
     
     typealias Entity = TotalMrEntity
@@ -31,17 +32,8 @@ class TotalMrEntity: ApiResult {
     }
 }
 
-protocol TotalMrRepos {
-    func getTotalMr() -> Observable<TotalMrEntity>
-}
 
-class TotalMrReposImpl: TotalMrRepos {
-    
-    func getTotalMr() -> Observable<TotalMrEntity> {
-        return TotalMrApi().request()
-    }
-}
-
+//MARK: - API
 class TotalMrApi: API<TotalMrEntity> {
     
     private enum Keys: String, CodingKey {
@@ -70,6 +62,18 @@ class TotalMrApi: API<TotalMrEntity> {
     }
 }
 
+//MARK: - Repos
+protocol TotalMrRepos {
+    func getTotalMr() -> Observable<TotalMrEntity>
+}
+
+class TotalMrReposImpl: TotalMrRepos {
+    
+    func getTotalMr() -> Observable<TotalMrEntity> {
+        return TotalMrApi().request()
+    }
+}
+//MARK: - UC
 class TotalMrUC {
     
     private var repos: TotalMrRepos
