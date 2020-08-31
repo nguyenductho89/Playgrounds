@@ -14,22 +14,34 @@ class ViewController: UIViewController {
 
     let uc = TotalMrUC(TotalMrReposImpl())
     let ucArray = GetSlideListUC(GoogleSlideReposImpl())
+    let ucPost = MeetingReceptionUC(MeetingReceptionReposImpl())
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        uc.exe()
+//        uc.exe()
 //            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
 //            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { totalMr in
-                print(totalMr.totalMr)
-            }, onError: { error in
-                
-            })
+//            .subscribe(onNext: { totalMr in
+//                print(totalMr.totalMr)
+//            }, onError: { error in
+//
+//            })
         
-        ucArray.exe()
-            .subscribe(onNext: { gooleSlides in
-                gooleSlides.forEach { print("Array: \($0.companyName)") }
+//        ucArray.exe()
+//            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: { gooleSlides in
+//                gooleSlides.forEach { print("Array: \($0.companyName)") }
+//            }, onError: { error in
+//                
+//            })
+        
+        ucPost.exePostCheckout(param: [:])
+            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { totalMr in
+                print(totalMr)
             }, onError: { error in
                 
             })

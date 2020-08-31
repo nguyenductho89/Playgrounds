@@ -89,7 +89,14 @@ class SlideEntity: ApiResult {
 //MARK: - API
 class GetSlideListAPI: API<[SlideEntity]> {
     
-    override init() {
+    var paramDict: Dictionary = [String: Any]()
+    
+    init(_ params: Dictionary<String, Any> = [:]) {
+        guard !params.isEmpty else {
+            paramDict = ["page": 0, "size": 0, "sort": "updated", "order": 1 ]
+            return
+        }
+        paramDict = params
     }
     
     override func convertJson(_ val: Any) throws -> Array<SlideEntity> {
@@ -109,7 +116,7 @@ class GetSlideListAPI: API<[SlideEntity]> {
     }
     
     override func params() -> Parameters {
-        return ["page": 0, "size": 0, "sort": "updated", "order": 1 ]
+        return paramDict
     }
     
 }
@@ -121,7 +128,7 @@ protocol GoogleSlideRepos {
 
 class GoogleSlideReposImpl: GoogleSlideRepos {
     func getSlide() -> Observable<[SlideEntity]> {
-        return GetSlideListAPI().request()
+        return GetSlideListAPI(["page": 0, "size": 0, "sort": "updated", "order": 1 ]).request()
     }
 }
 //MARK: - UC
