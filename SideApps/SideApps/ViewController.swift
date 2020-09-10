@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import RxSwift
+import Moya
 
 class ViewController: UIViewController {
 
@@ -19,32 +20,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        uc.exe()
-//            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { totalMr in
-//                print(totalMr.totalMr)
-//            }, onError: { error in
-//
-//            })
+        var provider = MoyaProvider<MyService>(stubClosure: MoyaProvider<MyService>.immediatelyStub)
+        provider.request(.createUser(firstName: "fir", lastName: "lat")) { result in
+            switch result {
+                case let .success(moyaResponse):
+                    let data = moyaResponse.data // Data, your JSON response is probably in here!
+                    let statusCode = moyaResponse.statusCode // Int - 200, 401, 500, etc
+                    print("\(moyaResponse.data)")
+                // do something in your app
+                case let .failure(error):
+                    print("\(error)")
+                // TODO: handle the error == best. comment. ever.
+            }
+        }
         
-//        ucArray.exe()
-//            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { gooleSlides in
-//                gooleSlides.forEach { print("Array: \($0.companyName)") }
-//            }, onError: { error in
-//                
-//            })
-        
-        ucPost.exePostCheckout(param: [:])
-            .subscribeOn(SerialDispatchQueueScheduler(qos: .default))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { totalMr in
-                print(totalMr)
-            }, onError: { error in
-                
-            })
     }
 
 

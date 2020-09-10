@@ -88,4 +88,3 @@ class TotalMrUC {
             .map { return TotalMr($0)}
     }
 }
-

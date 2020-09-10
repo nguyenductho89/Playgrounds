@@ -67,8 +67,6 @@ class API<T> {
     private func request(observer: AnyObserver<T>) {
         _ = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding(), headers: self.headers())
             .responseJSON { response in
-                print("Request: \(response.request) ")
-                print("Response: \(response.result) ")
                 switch response.result {
                     case .success(let val):
                         if(response.response!.statusCode < 400) {

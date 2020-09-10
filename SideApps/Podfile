@@ -8,6 +8,7 @@ pod 'Alamofire'
 pod 'RxSwift', '~> 5'
 pod 'RxCocoa', '~> 5'
 pod 'Swinject'
+pod 'Moya', '~> 14.0'
   # Pods for SideApps
 
   target 'SideAppsTests' do
