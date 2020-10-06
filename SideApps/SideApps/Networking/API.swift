@@ -67,6 +67,12 @@ class API<T> {
     private func request(observer: AnyObserver<T>) {
         _ = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding(), headers: self.headers())
             .responseJSON { response in
+                print("API Url:\(self.requestUrl())")
+                print("API method:\(self.method())")
+                print("API params:\(self.params())")
+                print("API encoding:\(self.encoding())")
+                print("API headers:\(self.headers())")
+                print("API response:\(response)")
                 switch response.result {
                     case .success(let val):
                         if(response.response!.statusCode < 400) {
@@ -110,12 +116,11 @@ class API<T> {
         if path.hasPrefix("/") {
             path.removeFirst()
         }
-        
         return baseUrl() + path
     }
     
     func baseUrl() -> String {
-        return "https://develop-mobile.famishare.jp/api/"
+        return "https://guava-mobile.famishare.jp/api/"
     }
     
     func path() -> String {
@@ -136,7 +141,7 @@ class API<T> {
     
     func headers() -> Alamofire.HTTPHeaders {
         return [
-            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiRFJKT1kiLCJvZmZpY2VfdHlwZSI6Ik1FRElDQUwiLCJwZXJzb25hbEZsYWciOmZhbHNlLCJyb2xlcyI6W10sIm9mZmljZV91c2VyX2lkIjoiNWMzYmU3M2I5ZjkxYjIwMDI5OTBlY2U2IiwiZW5hYmxlZCI6dHJ1ZSwiYXV0aG9yaXRpZXMiOnsicm9sZSI6Ik1QXzEiLCJmdW5jIjp7IkZQU18wIjpbMSwyLDMsNSw2LDcsOCw5LDEwLDEyLDE1LDE2XX19LCJjbGllbnRfaWQiOiJkcmpveSIsIm9mZmljZV9pZCI6IjVjM2JlNzNiZjA4Yzc2MDAyODgyMzU4NSIsImF1ZCI6WyJkZW1vIl0sInVzZXJfaWQiOiI1YzNiZTczYjlmOTFiMjAwMjk5MGVjZTIiLCJleHBpcmUiOjAsInNjb3BlIjpbIm9wZW5pZCIsImVsZWFybmluZyJdLCJub25sb2NrZWQiOnRydWUsImp0aSI6IjhmYmMyMDIwLTY5NjEtNGM1MS1iMDgyLWNlOGRkODA1YWUzYiJ9.NgyRWRZp4RNb_c95JY8qQ3Iu7c0yDvX6zZ5Pm0gl3Nw3ZyHzR2uvBEuYujIj371rxwu1scNAVOm4jlfuJ0u16lEe22QHJxxs7gjj4IXUr7LkJ2muH-n_or2zwR6-_-s3gX29q9bE0dDf-LMeRtzu9UUGIgsBY8xUjOEVOjxWNYivHe9rT8gAMUAGtKsCugPz01NFwmFkPWmcmz1ZaZqW8D3QbSZZ5C0NJVTZ1dGE2OwGj1BV1nGDo6_hofrb4_oh-47XjMjeGN8aIEZtA7hu8-B9ntT6RvsjgVXSqu_leQnCo6NO2MGp5r6mhH56NpXB4rN2NAvopdvY6gi-q9SnKA"
+            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiRFJKT1kiLCJvZmZpY2VfdHlwZSI6Ik1FRElDQUwiLCJwZXJzb25hbEZsYWciOmZhbHNlLCJyb2xlcyI6W10sIm9mZmljZV91c2VyX2lkIjoiNWYzNGViYzRiZjBjNWQwMDI2MGE5MDk1IiwiZW5hYmxlZCI6dHJ1ZSwiYXV0aG9yaXRpZXMiOnsicm9sZSI6Ik1QXzEiLCJmdW5jIjp7IkZQU18yIjpbMSwzLDQsNiw3XX19LCJjbGllbnRfaWQiOiJkcmpveSIsIm9mZmljZV9pZCI6IjVmMzRlYTUyMDU3ZTYzMDAyNmE2NDYyNCIsImF1ZCI6WyJkZW1vIl0sInVzZXJfaWQiOiI1ZjM0ZWJjNGJmMGM1ZDAwMjYwYTkwOTYiLCJleHBpcmUiOjE2MDEzNjgwNzU4NzIsInNjb3BlIjpbIm9wZW5pZCIsImVsZWFybmluZyJdLCJub25sb2NrZWQiOnRydWUsImp0aSI6ImMwZmU1NTgwLWU4OTUtNDc2Yy05MmViLWE2ZWFkNWM1NjY0ZSJ9.Nj1WYO6ZsfXQy6pKotKWcjzbk3INyx2twlnefQj2vTz6r2xufWYuiEo49WjP_GIixF98IB3_0K6zxznMlOoHQst-SfXM-0VlYiTzEoeaaMElFr5Ah7Cu8piXJS-nk0hM7AHZe-cGgjQU02dVv3d3KbrqIF2YSByHOp2jPWGovzYT3ldgLLf_2yzrycGJQFQkvHiwiT0eCV0U2X784tT-bJeIG-9xLc_Ty56-fcrIhI43OsJEdPS9Cv0tOJHqmG9LoV_dMn79Jmxb71gqap2Pr214lwTSsdRvEbgWMFwtR6QmrpqhPBpBjLnGxcJUYzxuq8SGJaNJEj_P4FYBbOiSxA"
         ]
     }
     

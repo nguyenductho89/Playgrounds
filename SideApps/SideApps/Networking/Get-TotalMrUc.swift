@@ -83,7 +83,7 @@ class TotalMrUC {
         self.repos = repos
     }
     
-    func exe() -> Observable<TotalMr> {
+    func exeGet() -> Observable<TotalMr> {
         return repos.getTotalMr()
             .map { return TotalMr($0)}
     }

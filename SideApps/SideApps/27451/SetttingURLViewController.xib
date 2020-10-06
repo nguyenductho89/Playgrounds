@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetttingURLViewController" customModule="SideApps" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="jfY-mI-mP9" id="vTa-Ur-fQu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +17,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jfY-mI-mP9">
+                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jfY-mI-mP9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Aa1-rF-OuQ"/>
+                <constraint firstItem="jfY-mI-mP9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="MGQ-S6-yTU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jfY-mI-mP9" secondAttribute="bottom" id="R9f-7b-tbU"/>
+                <constraint firstItem="jfY-mI-mP9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="aoD-bz-n4M"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="137"/>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
         </view>
     </objects>
 </document>

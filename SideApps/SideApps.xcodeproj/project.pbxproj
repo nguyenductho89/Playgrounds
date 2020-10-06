@@ -10,6 +10,9 @@
 		B69BCBEE09632C67E7E53023 /* Pods_SideAppsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39643B62232A831A283C97B /* Pods_SideAppsTests.framework */; };
 		D0015B2E250A0998002862AA /* SetttingURLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0015B2C250A0998002862AA /* SetttingURLViewController.swift */; };
 		D0015B2F250A0998002862AA /* SetttingURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B2D250A0998002862AA /* SetttingURLViewController.xib */; };
+		D0015B32250A168F002862AA /* WMServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0015B30250A168F002862AA /* WMServiceCell.swift */; };
+		D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B31250A168F002862AA /* WMServiceCell.xib */; };
+		D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */; };
 		D06AE3C724F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
 		D06AE3C824F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
 		D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C924F9ED7D0023215C /* ApiResult.swift */; };
@@ -54,6 +57,9 @@
 		A39643B62232A831A283C97B /* Pods_SideAppsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SideAppsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0015B2C250A0998002862AA /* SetttingURLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetttingURLViewController.swift; sourceTree = "<group>"; };
 		D0015B2D250A0998002862AA /* SetttingURLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetttingURLViewController.xib; sourceTree = "<group>"; };
+		D0015B30250A168F002862AA /* WMServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMServiceCell.swift; sourceTree = "<group>"; };
+		D0015B31250A168F002862AA /* WMServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WMServiceCell.xib; sourceTree = "<group>"; };
+		D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSettingWM.swift; sourceTree = "<group>"; };
 		D06AE3C624F9ED030023215C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D06AE3C924F9ED7D0023215C /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		D06AE3CC24F9EDC90023215C /* Get-TotalMrUc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get-TotalMrUc.swift"; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 			children = (
 				D0015B2C250A0998002862AA /* SetttingURLViewController.swift */,
 				D0015B2D250A0998002862AA /* SetttingURLViewController.xib */,
+				D0015B30250A168F002862AA /* WMServiceCell.swift */,
+				D0015B31250A168F002862AA /* WMServiceCell.xib */,
+				D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */,
 			);
 			path = 27451;
 			sourceTree = "<group>";
@@ -290,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */,
 				D09D952024F92A1A0057A504 /* LaunchScreen.storyboard in Resources */,
 				D09D951D24F92A1A0057A504 /* Assets.xcassets in Resources */,
 				D0015B2F250A0998002862AA /* SetttingURLViewController.xib in Resources */,
@@ -379,6 +389,7 @@
 				D06AE3CD24F9EDC90023215C /* Get-TotalMrUc.swift in Sources */,
 				D0015B2E250A0998002862AA /* SetttingURLViewController.swift in Sources */,
 				D09D951124F92A190057A504 /* AppDelegate.swift in Sources */,
+				D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */,
 				D09D951B24F92A190057A504 /* SideApps.xcdatamodeld in Sources */,
 				D06AE3D024F9EE050023215C /* EntityConvertible.swift in Sources */,
 				D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */,
@@ -388,6 +399,7 @@
 				D0F3FFE624FCB7F400160A78 /* MyService.swift in Sources */,
 				D0F3FFDA24FC99BC00160A78 /* GetArray.swift in Sources */,
 				D0F3FFE124FCAD8600160A78 /* Borders.swift in Sources */,
+				D0015B32250A168F002862AA /* WMServiceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

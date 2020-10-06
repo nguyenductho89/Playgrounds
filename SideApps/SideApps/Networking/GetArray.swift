@@ -139,7 +139,7 @@ class GetSlideListUC {
         self.repos = repos
     }
     
-    func exe() -> Observable<[Slide]> {
+    func exeGet() -> Observable<[Slide]> {
         return self.repos.getSlide().map { entityList in entityList.map { Slide.init($0) } }
     }
 }
