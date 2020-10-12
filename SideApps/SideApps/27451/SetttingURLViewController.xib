@@ -19,15 +19,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jfY-mI-mP9">
-                    <rect key="frame" x="0.0" y="64" width="414" height="798"/>
+                    <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-OF-xbe">
+                    <rect key="frame" x="155" y="149" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="logButton:" destination="-1" eventType="touchUpInside" id="Hl9-3r-47T"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="jfY-mI-mP9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Aa1-rF-OuQ"/>
                 <constraint firstItem="jfY-mI-mP9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="MGQ-S6-yTU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jfY-mI-mP9" secondAttribute="bottom" id="R9f-7b-tbU"/>
-                <constraint firstItem="jfY-mI-mP9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="aoD-bz-n4M"/>
+                <constraint firstItem="jfY-mI-mP9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="aoD-bz-n4M"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>

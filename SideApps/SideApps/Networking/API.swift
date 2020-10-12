@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import RxSwift
+import os.log
 class API<T> {
     
     private let disposeBag = DisposeBag()
@@ -65,14 +66,36 @@ class API<T> {
     }
     
     private func request(observer: AnyObserver<T>) {
-        _ = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding(), headers: self.headers())
+
+        var requestDes = ""
+        let request = AF.request(self.requestUrl(), method: self.method(), parameters: self.params(), encoding: self.encoding(), headers: self.headers())
             .responseJSON { response in
-                print("API Url:\(self.requestUrl())")
-                print("API method:\(self.method())")
-                print("API params:\(self.params())")
-                print("API encoding:\(self.encoding())")
-                print("API headers:\(self.headers())")
-                print("API response:\(response)")
+                func printStringFrom(title: String, content: String) -> String {
+                    return "-----------\(title)-----------\n    \(content)\n"
+                }
+                var desciption = "\n======================================\n"
+                desciption.append(printStringFrom(title: "URL", content: String(describing: response.request?.description)))
+                if let statusCode = response.response?.statusCode {
+                    desciption.append(printStringFrom(title: "Status Code", content: statusCode < 400 ? "✅ \(statusCode)" : "🔴 \(statusCode)"))
+                }
+                desciption.append(printStringFrom(title: "Method", content: "\(self.method())"))
+                desciption.append(printStringFrom(title: "Headers", content: "\(self.headers())"))
+                desciption.append(printStringFrom(title: "Headers", content: "\(self.params())"))
+                if let body = response.request?.httpBody {
+                    desciption.append(printStringFrom(title: "Body", content: "\(String(describing: String(data: body, encoding: .utf8)))"))
+                }
+                desciption.append(printStringFrom(title: "Headers", content: "\(self.encoding())"))
+                switch response.result {
+                    case .success(let data):break
+                    case .failure(let error):
+                        desciption.append("===Result:===\n Error:\(error)\n")
+                    
+                }
+                desciption.append("======================================\n")
+                os_log("%s",
+                       log: Log.general,
+                       type: .error,
+                       "\(desciption)")
                 switch response.result {
                     case .success(let val):
                         if(response.response!.statusCode < 400) {
@@ -96,6 +119,7 @@ class API<T> {
                     }
                 }
         }
+        requestDes = request.request?.debugDescription ?? ""
     }
     
     func convertJson(_ val: Any) throws -> T {
@@ -141,7 +165,7 @@ class API<T> {
     
     func headers() -> Alamofire.HTTPHeaders {
         return [
-            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiRFJKT1kiLCJvZmZpY2VfdHlwZSI6Ik1FRElDQUwiLCJwZXJzb25hbEZsYWciOmZhbHNlLCJyb2xlcyI6W10sIm9mZmljZV91c2VyX2lkIjoiNWYzNGViYzRiZjBjNWQwMDI2MGE5MDk1IiwiZW5hYmxlZCI6dHJ1ZSwiYXV0aG9yaXRpZXMiOnsicm9sZSI6Ik1QXzEiLCJmdW5jIjp7IkZQU18yIjpbMSwzLDQsNiw3XX19LCJjbGllbnRfaWQiOiJkcmpveSIsIm9mZmljZV9pZCI6IjVmMzRlYTUyMDU3ZTYzMDAyNmE2NDYyNCIsImF1ZCI6WyJkZW1vIl0sInVzZXJfaWQiOiI1ZjM0ZWJjNGJmMGM1ZDAwMjYwYTkwOTYiLCJleHBpcmUiOjE2MDEzNjgwNzU4NzIsInNjb3BlIjpbIm9wZW5pZCIsImVsZWFybmluZyJdLCJub25sb2NrZWQiOnRydWUsImp0aSI6ImMwZmU1NTgwLWU4OTUtNDc2Yy05MmViLWE2ZWFkNWM1NjY0ZSJ9.Nj1WYO6ZsfXQy6pKotKWcjzbk3INyx2twlnefQj2vTz6r2xufWYuiEo49WjP_GIixF98IB3_0K6zxznMlOoHQst-SfXM-0VlYiTzEoeaaMElFr5Ah7Cu8piXJS-nk0hM7AHZe-cGgjQU02dVv3d3KbrqIF2YSByHOp2jPWGovzYT3ldgLLf_2yzrycGJQFQkvHiwiT0eCV0U2X784tT-bJeIG-9xLc_Ty56-fcrIhI43OsJEdPS9Cv0tOJHqmG9LoV_dMn79Jmxb71gqap2Pr214lwTSsdRvEbgWMFwtR6QmrpqhPBpBjLnGxcJUYzxuq8SGJaNJEj_P4FYBbOiSxA"
+            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiUFJKT1kiLCJvZmZpY2VfdHlwZSI6IlBIQVJNQUNZIiwicGVyc29uYWxGbGFnIjpmYWxzZSwicm9sZXMiOltdLCJvZmZpY2VfdXNlcl9pZCI6IjVmMzRlZTJkYmYwYzVkMDAyNjBhOTA5ZSIsImVuYWJsZWQiOnRydWUsImF1dGhvcml0aWVzIjp7InJvbGUiOiJNUF8xIiwiZnVuYyI6eyJGUFNfMCI6W119fSwiY2xpZW50X2lkIjoicHJqb3kiLCJvZmZpY2VfaWQiOiI1YjhhNTM4OGQyMTIyZDA2MWQ1MmVkOWQiLCJhdWQiOlsiZGVtbyJdLCJ1c2VyX2lkIjoiNWYzNGVlMmRiZjBjNWQwMDI2MGE5MDliIiwiZXhwaXJlIjowLCJzY29wZSI6WyJvcGVuaWQiXSwibm9ubG9ja2VkIjp0cnVlLCJqdGkiOiI0YTdkYjcwNi1iOGMzLTQzZWItODVlOC02ZmMyYjM0YTEwNzQifQ.mCfVMWneb_sbWrAU3abBh4aSdkg3q3XhvwOx83OQtZhHRVNs6jWLU6gxYYGWkroI2PQHcq42aNT36gm50LfE3gz_9tsqVj9RFhFXPBkfScu1RrkhCbYoRzzS3PrUZXPTMvFBEelHJK-MvNTXSjHpwMq3zyu8W2gNl7SPwu97piHSMWV7wgfaCGe4CaaB614ToAP5HVOf1YLDOpjiZ-yLJsLcn6kvWg0rAWNITWFgKuLN_z6Ie8_LG8bvU775D3j3KD_budGO3P6mxwPmzbN2NQbgV7NSO07Q__fY4GlUXlokl9TFHaFt1qo-dobx3mShyyvm1F_P9vlAGfQczgZiTw"
         ]
     }
     
@@ -151,5 +175,11 @@ class API<T> {
     
     func needOAuthToken() -> Bool {
         return true
+    }
+}
+
+extension URLRequest {
+    func fullDescription() -> String {
+        return "\(self.cachePolicy)"
     }
 }

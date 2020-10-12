@@ -12,6 +12,9 @@
 		D0015B2F250A0998002862AA /* SetttingURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B2D250A0998002862AA /* SetttingURLViewController.xib */; };
 		D0015B32250A168F002862AA /* WMServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0015B30250A168F002862AA /* WMServiceCell.swift */; };
 		D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B31250A168F002862AA /* WMServiceCell.xib */; };
+		D01608A6252DB51F009E4516 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01608A4252DB51F009E4516 /* BaseTableViewCell.swift */; };
+		D01608A7252DB51F009E4516 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */; };
+		D01608AA252DC9AA009E4516 /* Put-MeetingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01608A9252DC9AA009E4516 /* Put-MeetingService.swift */; };
 		D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */; };
 		D06AE3C724F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
 		D06AE3C824F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
@@ -29,6 +32,10 @@
 		D09D951D24F92A1A0057A504 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D09D951C24F92A1A0057A504 /* Assets.xcassets */; };
 		D09D952024F92A1A0057A504 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D09D951E24F92A1A0057A504 /* LaunchScreen.storyboard */; };
 		D09D952B24F92A1A0057A504 /* SideAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09D952A24F92A1A0057A504 /* SideAppsTests.swift */; };
+		D0C02DFA252C58BD00BD27AC /* RxSwiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */; };
+		D0C02DFB252C58BD00BD27AC /* RxSwiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */; };
+		D0C02DFC252C58BD00BD27AC /* RxSwiftVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */; };
+		D0C02DFD252C58BD00BD27AC /* RxSwiftVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */; };
 		D0F3FFDA24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDB24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */; };
@@ -59,6 +66,9 @@
 		D0015B2D250A0998002862AA /* SetttingURLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetttingURLViewController.xib; sourceTree = "<group>"; };
 		D0015B30250A168F002862AA /* WMServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMServiceCell.swift; sourceTree = "<group>"; };
 		D0015B31250A168F002862AA /* WMServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WMServiceCell.xib; sourceTree = "<group>"; };
+		D01608A4252DB51F009E4516 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
+		D01608A9252DC9AA009E4516 /* Put-MeetingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Put-MeetingService.swift"; sourceTree = "<group>"; };
 		D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSettingWM.swift; sourceTree = "<group>"; };
 		D06AE3C624F9ED030023215C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D06AE3C924F9ED7D0023215C /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
@@ -77,6 +87,8 @@
 		D09D952624F92A1A0057A504 /* SideAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D09D952A24F92A1A0057A504 /* SideAppsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideAppsTests.swift; sourceTree = "<group>"; };
 		D09D952C24F92A1A0057A504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftVC.swift; sourceTree = "<group>"; };
+		D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftVC.xib; sourceTree = "<group>"; };
 		D0F3FFD924FC99BC00160A78 /* GetArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArray.swift; sourceTree = "<group>"; };
 		D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		D0F3FFE024FCAD8600160A78 /* Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
@@ -113,8 +125,18 @@
 				D0015B30250A168F002862AA /* WMServiceCell.swift */,
 				D0015B31250A168F002862AA /* WMServiceCell.xib */,
 				D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */,
+				D01608A4252DB51F009E4516 /* BaseTableViewCell.swift */,
+				D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */,
 			);
 			path = 27451;
+			sourceTree = "<group>";
+		};
+		D01608A8252DC990009E4516 /* 30297 */ = {
+			isa = PBXGroup;
+			children = (
+				D01608A9252DC9AA009E4516 /* Put-MeetingService.swift */,
+			);
+			path = 30297;
 			sourceTree = "<group>";
 		};
 		D06AE3C524F9ECEC0023215C /* Networking */ = {
@@ -155,6 +177,8 @@
 		D09D950F24F92A190057A504 /* SideApps */ = {
 			isa = PBXGroup;
 			children = (
+				D01608A8252DC990009E4516 /* 30297 */,
+				D0C02DF4252C586A00BD27AC /* RxSwift */,
 				D0015B29250A07B8002862AA /* 27451 */,
 				D0F3FFDF24FCAD7400160A78 /* UIViewExtension */,
 				D06AE3C524F9ECEC0023215C /* Networking */,
@@ -177,6 +201,15 @@
 				D09D952C24F92A1A0057A504 /* Info.plist */,
 			);
 			path = SideAppsTests;
+			sourceTree = "<group>";
+		};
+		D0C02DF4252C586A00BD27AC /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */,
+				D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */,
+			);
+			path = RxSwift;
 			sourceTree = "<group>";
 		};
 		D0F3FFDF24FCAD7400160A78 /* UIViewExtension */ = {
@@ -299,6 +332,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01608A7252DB51F009E4516 /* BaseTableViewCell.xib in Resources */,
+				D0C02DFC252C58BD00BD27AC /* RxSwiftVC.xib in Resources */,
 				D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */,
 				D09D952024F92A1A0057A504 /* LaunchScreen.storyboard in Resources */,
 				D09D951D24F92A1A0057A504 /* Assets.xcassets in Resources */,
@@ -311,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C02DFD252C58BD00BD27AC /* RxSwiftVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09D951524F92A190057A504 /* ViewController.swift in Sources */,
+				D01608AA252DC9AA009E4516 /* Put-MeetingService.swift in Sources */,
 				D06AE3CD24F9EDC90023215C /* Get-TotalMrUc.swift in Sources */,
 				D0015B2E250A0998002862AA /* SetttingURLViewController.swift in Sources */,
 				D09D951124F92A190057A504 /* AppDelegate.swift in Sources */,
@@ -395,7 +432,9 @@
 				D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */,
 				D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */,
 				D09D951324F92A190057A504 /* SceneDelegate.swift in Sources */,
+				D0C02DFA252C58BD00BD27AC /* RxSwiftVC.swift in Sources */,
 				D06AE3C724F9ED030023215C /* API.swift in Sources */,
+				D01608A6252DB51F009E4516 /* BaseTableViewCell.swift in Sources */,
 				D0F3FFE624FCB7F400160A78 /* MyService.swift in Sources */,
 				D0F3FFDA24FC99BC00160A78 /* GetArray.swift in Sources */,
 				D0F3FFE124FCAD8600160A78 /* Borders.swift in Sources */,
@@ -413,6 +452,7 @@
 				D0F3FFDE24FCA36C00160A78 /* PostAPI.swift in Sources */,
 				D06AE3CB24F9ED7D0023215C /* ApiResult.swift in Sources */,
 				D0F3FFDB24FC99BC00160A78 /* GetArray.swift in Sources */,
+				D0C02DFB252C58BD00BD27AC /* RxSwiftVC.swift in Sources */,
 				D06AE3CE24F9EDC90023215C /* Get-TotalMrUc.swift in Sources */,
 				D06AE3C824F9ED030023215C /* API.swift in Sources */,
 				D09D952B24F92A1A0057A504 /* SideAppsTests.swift in Sources */,
