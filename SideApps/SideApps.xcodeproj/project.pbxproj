@@ -36,6 +36,10 @@
 		D0C02DFB252C58BD00BD27AC /* RxSwiftVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */; };
 		D0C02DFC252C58BD00BD27AC /* RxSwiftVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */; };
 		D0C02DFD252C58BD00BD27AC /* RxSwiftVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */; };
+		D0D6D06525345F750074888A /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6D06425345F750074888A /* AddButtonView.swift */; };
+		D0D6D067253460580074888A /* AddButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D6D066253460580074888A /* AddButtonView.xib */; };
+		D0D6D06C253461C20074888A /* AddButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6D06A253461C20074888A /* AddButtonVC.swift */; };
+		D0D6D06D253461C20074888A /* AddButtonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D6D06B253461C20074888A /* AddButtonVC.xib */; };
 		D0F3FFDA24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDB24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */; };
@@ -89,6 +93,10 @@
 		D09D952C24F92A1A0057A504 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0C02DF8252C58BD00BD27AC /* RxSwiftVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftVC.swift; sourceTree = "<group>"; };
 		D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RxSwiftVC.xib; sourceTree = "<group>"; };
+		D0D6D06425345F750074888A /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		D0D6D066253460580074888A /* AddButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonView.xib; sourceTree = "<group>"; };
+		D0D6D06A253461C20074888A /* AddButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonVC.swift; sourceTree = "<group>"; };
+		D0D6D06B253461C20074888A /* AddButtonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonVC.xib; sourceTree = "<group>"; };
 		D0F3FFD924FC99BC00160A78 /* GetArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArray.swift; sourceTree = "<group>"; };
 		D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		D0F3FFE024FCAD8600160A78 /* Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 		D09D950F24F92A190057A504 /* SideApps */ = {
 			isa = PBXGroup;
 			children = (
+				D0D6D06325345F530074888A /* 30273 */,
 				D01608A8252DC990009E4516 /* 30297 */,
 				D0C02DF4252C586A00BD27AC /* RxSwift */,
 				D0015B29250A07B8002862AA /* 27451 */,
@@ -210,6 +219,17 @@
 				D0C02DF9252C58BD00BD27AC /* RxSwiftVC.xib */,
 			);
 			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		D0D6D06325345F530074888A /* 30273 */ = {
+			isa = PBXGroup;
+			children = (
+				D0D6D06425345F750074888A /* AddButtonView.swift */,
+				D0D6D066253460580074888A /* AddButtonView.xib */,
+				D0D6D06A253461C20074888A /* AddButtonVC.swift */,
+				D0D6D06B253461C20074888A /* AddButtonVC.xib */,
+			);
+			path = 30273;
 			sourceTree = "<group>";
 		};
 		D0F3FFDF24FCAD7400160A78 /* UIViewExtension */ = {
@@ -334,6 +354,8 @@
 			files = (
 				D01608A7252DB51F009E4516 /* BaseTableViewCell.xib in Resources */,
 				D0C02DFC252C58BD00BD27AC /* RxSwiftVC.xib in Resources */,
+				D0D6D06D253461C20074888A /* AddButtonVC.xib in Resources */,
+				D0D6D067253460580074888A /* AddButtonView.xib in Resources */,
 				D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */,
 				D09D952024F92A1A0057A504 /* LaunchScreen.storyboard in Resources */,
 				D09D951D24F92A1A0057A504 /* Assets.xcassets in Resources */,
@@ -427,12 +449,14 @@
 				D0015B2E250A0998002862AA /* SetttingURLViewController.swift in Sources */,
 				D09D951124F92A190057A504 /* AppDelegate.swift in Sources */,
 				D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */,
+				D0D6D06C253461C20074888A /* AddButtonVC.swift in Sources */,
 				D09D951B24F92A190057A504 /* SideApps.xcdatamodeld in Sources */,
 				D06AE3D024F9EE050023215C /* EntityConvertible.swift in Sources */,
 				D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */,
 				D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */,
 				D09D951324F92A190057A504 /* SceneDelegate.swift in Sources */,
 				D0C02DFA252C58BD00BD27AC /* RxSwiftVC.swift in Sources */,
+				D0D6D06525345F750074888A /* AddButtonView.swift in Sources */,
 				D06AE3C724F9ED030023215C /* API.swift in Sources */,
 				D01608A6252DB51F009E4516 /* BaseTableViewCell.swift in Sources */,
 				D0F3FFE624FCB7F400160A78 /* MyService.swift in Sources */,
