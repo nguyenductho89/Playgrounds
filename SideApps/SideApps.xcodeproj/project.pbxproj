@@ -12,10 +12,12 @@
 		D0015B2F250A0998002862AA /* SetttingURLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B2D250A0998002862AA /* SetttingURLViewController.xib */; };
 		D0015B32250A168F002862AA /* WMServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0015B30250A168F002862AA /* WMServiceCell.swift */; };
 		D0015B33250A168F002862AA /* WMServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0015B31250A168F002862AA /* WMServiceCell.xib */; };
+		D00CF58025405AA800F39915 /* ListDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00CF57F25405AA800F39915 /* ListDoctor.swift */; };
 		D01608A6252DB51F009E4516 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01608A4252DB51F009E4516 /* BaseTableViewCell.swift */; };
 		D01608A7252DB51F009E4516 /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */; };
 		D01608AA252DC9AA009E4516 /* Put-MeetingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01608A9252DC9AA009E4516 /* Put-MeetingService.swift */; };
 		D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */; };
+		D05F86A725406656009519A2 /* ListDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05F86A625406656009519A2 /* ListDepartment.swift */; };
 		D06AE3C724F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
 		D06AE3C824F9ED030023215C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C624F9ED030023215C /* API.swift */; };
 		D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06AE3C924F9ED7D0023215C /* ApiResult.swift */; };
@@ -40,6 +42,7 @@
 		D0D6D067253460580074888A /* AddButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D6D066253460580074888A /* AddButtonView.xib */; };
 		D0D6D06C253461C20074888A /* AddButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6D06A253461C20074888A /* AddButtonVC.swift */; };
 		D0D6D06D253461C20074888A /* AddButtonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D6D06B253461C20074888A /* AddButtonVC.xib */; };
+		D0E39DA62540781D00507344 /* ListDrug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E39DA52540781D00507344 /* ListDrug.swift */; };
 		D0F3FFDA24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDB24FC99BC00160A78 /* GetArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFD924FC99BC00160A78 /* GetArray.swift */; };
 		D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */; };
@@ -70,10 +73,12 @@
 		D0015B2D250A0998002862AA /* SetttingURLViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetttingURLViewController.xib; sourceTree = "<group>"; };
 		D0015B30250A168F002862AA /* WMServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMServiceCell.swift; sourceTree = "<group>"; };
 		D0015B31250A168F002862AA /* WMServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WMServiceCell.xib; sourceTree = "<group>"; };
+		D00CF57F25405AA800F39915 /* ListDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDoctor.swift; sourceTree = "<group>"; };
 		D01608A4252DB51F009E4516 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
 		D01608A9252DC9AA009E4516 /* Put-MeetingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Put-MeetingService.swift"; sourceTree = "<group>"; };
 		D0551AA52510B6FE00BFC838 /* GetSettingWM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSettingWM.swift; sourceTree = "<group>"; };
+		D05F86A625406656009519A2 /* ListDepartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDepartment.swift; sourceTree = "<group>"; };
 		D06AE3C624F9ED030023215C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		D06AE3C924F9ED7D0023215C /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		D06AE3CC24F9EDC90023215C /* Get-TotalMrUc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get-TotalMrUc.swift"; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		D0D6D066253460580074888A /* AddButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonView.xib; sourceTree = "<group>"; };
 		D0D6D06A253461C20074888A /* AddButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonVC.swift; sourceTree = "<group>"; };
 		D0D6D06B253461C20074888A /* AddButtonVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonVC.xib; sourceTree = "<group>"; };
+		D0E39DA52540781D00507344 /* ListDrug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDrug.swift; sourceTree = "<group>"; };
 		D0F3FFD924FC99BC00160A78 /* GetArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetArray.swift; sourceTree = "<group>"; };
 		D0F3FFDC24FCA36C00160A78 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
 		D0F3FFE024FCAD8600160A78 /* Borders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borders.swift; sourceTree = "<group>"; };
@@ -137,6 +143,16 @@
 				D01608A5252DB51F009E4516 /* BaseTableViewCell.xib */,
 			);
 			path = 27451;
+			sourceTree = "<group>";
+		};
+		D00CF57E25405A9600F39915 /* 25961 */ = {
+			isa = PBXGroup;
+			children = (
+				D00CF57F25405AA800F39915 /* ListDoctor.swift */,
+				D05F86A625406656009519A2 /* ListDepartment.swift */,
+				D0E39DA52540781D00507344 /* ListDrug.swift */,
+			);
+			path = 25961;
 			sourceTree = "<group>";
 		};
 		D01608A8252DC990009E4516 /* 30297 */ = {
@@ -185,6 +201,7 @@
 		D09D950F24F92A190057A504 /* SideApps */ = {
 			isa = PBXGroup;
 			children = (
+				D00CF57E25405A9600F39915 /* 25961 */,
 				D0D6D06325345F530074888A /* 30273 */,
 				D01608A8252DC990009E4516 /* 30297 */,
 				D0C02DF4252C586A00BD27AC /* RxSwift */,
@@ -444,14 +461,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D09D951524F92A190057A504 /* ViewController.swift in Sources */,
+				D05F86A725406656009519A2 /* ListDepartment.swift in Sources */,
 				D01608AA252DC9AA009E4516 /* Put-MeetingService.swift in Sources */,
 				D06AE3CD24F9EDC90023215C /* Get-TotalMrUc.swift in Sources */,
 				D0015B2E250A0998002862AA /* SetttingURLViewController.swift in Sources */,
 				D09D951124F92A190057A504 /* AppDelegate.swift in Sources */,
 				D0551AA62510B6FE00BFC838 /* GetSettingWM.swift in Sources */,
 				D0D6D06C253461C20074888A /* AddButtonVC.swift in Sources */,
+				D00CF58025405AA800F39915 /* ListDoctor.swift in Sources */,
 				D09D951B24F92A190057A504 /* SideApps.xcdatamodeld in Sources */,
 				D06AE3D024F9EE050023215C /* EntityConvertible.swift in Sources */,
+				D0E39DA62540781D00507344 /* ListDrug.swift in Sources */,
 				D06AE3CA24F9ED7D0023215C /* ApiResult.swift in Sources */,
 				D0F3FFDD24FCA36C00160A78 /* PostAPI.swift in Sources */,
 				D09D951324F92A190057A504 /* SceneDelegate.swift in Sources */,

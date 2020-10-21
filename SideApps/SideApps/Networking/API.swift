@@ -120,6 +120,7 @@ class API<T> {
                 }
         }
         requestDes = request.request?.debugDescription ?? ""
+        print(requestDes)
     }
     
     func convertJson(_ val: Any) throws -> T {
@@ -144,7 +145,7 @@ class API<T> {
     }
     
     func baseUrl() -> String {
-        return "https://guava-mobile.famishare.jp/api/"
+        return "https://orange.drjoy.famishare.jp/api/"//"https://orange-mobile.famishare.jp/api/"
     }
     
     func path() -> String {
@@ -165,7 +166,7 @@ class API<T> {
     
     func headers() -> Alamofire.HTTPHeaders {
         return [
-            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiUFJKT1kiLCJvZmZpY2VfdHlwZSI6IlBIQVJNQUNZIiwicGVyc29uYWxGbGFnIjpmYWxzZSwicm9sZXMiOltdLCJvZmZpY2VfdXNlcl9pZCI6IjVmMzRlZTJkYmYwYzVkMDAyNjBhOTA5ZSIsImVuYWJsZWQiOnRydWUsImF1dGhvcml0aWVzIjp7InJvbGUiOiJNUF8xIiwiZnVuYyI6eyJGUFNfMCI6W119fSwiY2xpZW50X2lkIjoicHJqb3kiLCJvZmZpY2VfaWQiOiI1YjhhNTM4OGQyMTIyZDA2MWQ1MmVkOWQiLCJhdWQiOlsiZGVtbyJdLCJ1c2VyX2lkIjoiNWYzNGVlMmRiZjBjNWQwMDI2MGE5MDliIiwiZXhwaXJlIjowLCJzY29wZSI6WyJvcGVuaWQiXSwibm9ubG9ja2VkIjp0cnVlLCJqdGkiOiI0YTdkYjcwNi1iOGMzLTQzZWItODVlOC02ZmMyYjM0YTEwNzQifQ.mCfVMWneb_sbWrAU3abBh4aSdkg3q3XhvwOx83OQtZhHRVNs6jWLU6gxYYGWkroI2PQHcq42aNT36gm50LfE3gz_9tsqVj9RFhFXPBkfScu1RrkhCbYoRzzS3PrUZXPTMvFBEelHJK-MvNTXSjHpwMq3zyu8W2gNl7SPwu97piHSMWV7wgfaCGe4CaaB614ToAP5HVOf1YLDOpjiZ-yLJsLcn6kvWg0rAWNITWFgKuLN_z6Ie8_LG8bvU775D3j3KD_budGO3P6mxwPmzbN2NQbgV7NSO07Q__fY4GlUXlokl9TFHaFt1qo-dobx3mShyyvm1F_P9vlAGfQczgZiTw"
+            "Authorization": "Bearer " + "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0IjoiUFJKT1kiLCJvZmZpY2VfdHlwZSI6IlBIQVJNQUNZIiwicGVyc29uYWxGbGFnIjpmYWxzZSwicm9sZXMiOltdLCJvZmZpY2VfdXNlcl9pZCI6IjVmMzRlZTJkYmYwYzVkMDAyNjBhOTA5ZSIsImVuYWJsZWQiOnRydWUsImF1dGhvcml0aWVzIjp7InJvbGUiOiJNUF8xIiwiZnVuYyI6eyJGUFNfMCI6W119fSwiY2xpZW50X2lkIjoicHJqb3kiLCJvZmZpY2VfaWQiOiI1YjhhNTM4OGQyMTIyZDA2MWQ1MmVkOWQiLCJhdWQiOlsiZGVtbyJdLCJ1c2VyX2lkIjoiNWYzNGVlMmRiZjBjNWQwMDI2MGE5MDliIiwiZXhwaXJlIjowLCJzY29wZSI6WyJvcGVuaWQiXSwibm9ubG9ja2VkIjp0cnVlLCJqdGkiOiJlOGQxNTZmYy04NzE2LTQ2ZDItYjdjYS1lOGFkNjhmNjM4NjgifQ.jiEiAK2V-afjksqC7Gq9jbOJ1QI3Epw5IGAASqDspfQyy7-tQEoEkaFzfby3C3R1PrXpTHkA3Fc76VW4ra30DExYb6cKtG1q-FDTx_se0_iCLzICR46TM3JVK_OjBU6YtxOxYPeINxcqYGwrtVCGjaIVKrAEksjnWMoxEv6twbQxORVtpfTMjVXWK6Y2al5fwAPkqTcV-xIATDOpxbYOJ-1xnRoCVkD2EloGUMIDUM20yKAK5LF9IgNhg5hblec1h5B_I_SC4V7hWVH0WUBzDQQ3jZxX0wUMzRfF2Zh4QCA_e4o_60ZGLIbLhJUJ6m8FQEiYYwt4y8Eo3J48yzZ40w"
         ]
     }
     

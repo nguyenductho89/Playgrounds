@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let uc = TotalMrUC(TotalMrReposImpl())
     let ucArray = GetSlideListUC(GoogleSlideReposImpl())
     let ucPost = MeetingReceptionUC(MeetingReceptionReposImpl())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
                 // TODO: handle the error == best. comment. ever.
             }
         }
-        
+
     }
 
 
